@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 
 namespace leet
@@ -74,5 +74,27 @@ namespace leet
             }
             return true;
          }
+
+        public bool IsPalindrome(ListNode head)
+        {
+            ArrayList al= new ArrayList();
+            if (head == null) return true;
+            do
+            {
+                al.Add(head.val);
+                head = head.next;
+            } 
+            while (head != null);
+
+            int[] sInt = (int[])al.ToArray(typeof(int));
+            
+            for (int i = 0; i < sInt.Length; i++)
+            {
+                if (sInt[i] != sInt[sInt.Length - 1 - i])
+                    return false;
+
+            }
+            return true;
+        }
     }
 }
