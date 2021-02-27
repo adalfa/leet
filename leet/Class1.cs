@@ -29,6 +29,7 @@ namespace leet
         {
             int[] results=new int[2];
             if (nums.Length < 2) return new int[0];
+            Array.Sort(nums);
             for( int idx1=0;idx1<nums.Length;idx1++)
             {
                 results[0] = idx1;
@@ -47,5 +48,31 @@ namespace leet
             }
             return results;
         }
+
+        
+  public class ListNode {
+      public int val;
+      public ListNode next;
+      public ListNode(int val=0, ListNode next=null) {
+          this.val = val;
+          this.next = next;
+      }
+  }
+ 
+          public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+            {
+            return new ListNode(0, null);
+            }
+        public bool IsPalindrome(int x)
+        {
+            string sInt = x.ToString();
+            for(int i=0;i<sInt.Length;i++)
+            {
+                if (sInt[i] != sInt[sInt.Length - 1 - i])
+                    return false;
+
+            }
+            return true;
+         }
     }
 }
