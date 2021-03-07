@@ -128,5 +128,19 @@ namespace leet
                 l = sArray[sArray.Length - 1].Length;
             return l;
          }
+        public int[] PlusOne(int[] digits)
+        {
+
+            long n=0;
+            for(int i=0;i<digits.Length;i++)
+            {
+                n *=10^(digits.Length-i) ;
+                n += digits[i];
+
+            }
+
+            n += 1;
+            return Array.ConvertAll(n.ToString().ToCharArray(), c => (int)Char.GetNumericValue(c));
+        }
     }
 }
