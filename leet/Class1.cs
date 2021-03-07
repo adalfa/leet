@@ -120,5 +120,13 @@ namespace leet
             }
             return max;               
          }
+        public int LengthOfLastWord(string s)
+        {
+            int l = 0;
+            string[] sArray= s.Split(' ',StringSplitOptions.RemoveEmptyEntries);
+            if (sArray.Length > 0)
+                l = sArray[sArray.Length - 1].Length;
+            return l;
+         }
     }
 }
