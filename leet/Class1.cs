@@ -96,5 +96,29 @@ namespace leet
             }
             return true;
         }
+        public int MaxSubArray(int[] nums)
+        {
+            int max = Int32.MinValue;
+            int cumMax = Int32.MinValue;
+            
+            for (int i = 0; i < nums.Length; i++)
+            {
+                cumMax= 0;
+                
+                
+                for (int j = i; j < nums.Length; j++)
+                {
+
+                    //Console.WriteLine("j:{0} nums: {1}", j, nums[j]);
+                    cumMax += nums[j];
+                    if (cumMax > max) max = cumMax;
+
+                }
+                //Console.WriteLine("i{0};max{1};cuMAx{2}",i, max, cumMax);
+
+               
+            }
+            return max;               
+         }
     }
 }
